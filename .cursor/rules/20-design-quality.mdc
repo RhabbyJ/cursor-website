@@ -1,0 +1,16 @@
+---
+globs: "**/*.{tsx,jsx,css,scss,md,mdx}"
+alwaysApply: false
+---
+# Design quality
+
+- Establish a specific visual concept before styling. The concept must connect to the brand, audience, product behavior, or physical environment.
+- Design hierarchy through scale, contrast, spacing, alignment, density, and rhythm before adding decoration.
+- Make the primary action unmistakable without turning every element into a button.
+- Use asymmetry or varied section composition where it improves narrative flow; avoid repeating the same container/card pattern down the entire page.
+- Real product behavior should appear early. Prefer an interactive preview, live data fragment, workflow diagram, or meaningful before/after over an abstract dashboard mockup.
+- Every section must answer a distinct user question. Remove sections that repeat the same claim.
+- Use editorial-quality copy: concrete nouns, active verbs, specific outcomes, and honest constraints.
+- Use imagery intentionally. Do not insert random stock imagery or decorative screenshots that do not prove a capability.
+- Responsive behavior is designed, not merely stacked. Reconsider crop, density, ordering, navigation, interaction, and typography at narrow widths.
+- Avoid excessive glassmorphism, neon glow, floating blobs, enormous border radii, tiny low-contrast labels, and animation on every element.

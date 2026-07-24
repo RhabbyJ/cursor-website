@@ -1,0 +1,15 @@
+---
+globs: "**/*.{tsx,jsx,html,css,scss}"
+alwaysApply: false
+---
+# Accessibility and performance gates
+
+- Use semantic HTML first. Add ARIA only when native semantics are insufficient.
+- All interactive elements must be reachable and operable with a keyboard, show a visible focus state, and have an accessible name.
+- Preserve heading order, form labels, error association, landmark structure, and meaningful alternative text.
+- Do not encode meaning by color alone. Verify contrast in every state, including disabled, hover, focus, and text over imagery.
+- Touch targets must be comfortably usable. Hover-only information needs a keyboard/touch equivalent.
+- Reserve image/media dimensions to reduce layout shift. Load only the assets needed for the initial viewport.
+- Avoid unnecessary client-side JavaScript and large animation dependencies on static pages.
+- Check the browser console and failed network requests. A visually attractive page with runtime errors does not pass.
+- Test at minimum around 375px, 768px, and 1440px viewport widths, plus any product-specific breakpoint.

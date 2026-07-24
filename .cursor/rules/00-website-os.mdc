@@ -1,0 +1,14 @@
+---
+alwaysApply: true
+---
+# Website OS operating rule
+
+- Treat the deliverable as a business system and user experience, not a collection of decorative sections.
+- Before meaningful implementation, read `docs/site-brief.md`, `docs/site-spec.md`, `docs/visual-direction.md`, and `docs/acceptance.md` when present. Create missing documents through the relevant skills.
+- Inspect the existing framework, package manager, components, routes, tokens, data sources, and conventions before proposing structural changes.
+- Record necessary assumptions explicitly. Never invent client facts, testimonials, customer counts, awards, integration status, or performance results.
+- Preserve working behavior. Prefer focused changes over broad rewrites unless the current architecture demonstrably blocks the requested outcome.
+- Never declare a user-facing task complete until the page has been opened in the browser, critical flows have been exercised, and available lint/typecheck/test/build commands pass.
+- Report what was verified, what was assumed, and what remains incomplete.
+- Do not use generic filler such as "innovative solutions," "seamless experience," or "transform your business" without concrete supporting detail.
+- Do not default to a gradient hero, centered headline, three equal cards, and an oversized rounded rectangle. Every page needs a documented visual thesis and information hierarchy.

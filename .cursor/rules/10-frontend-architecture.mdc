@@ -1,0 +1,16 @@
+---
+globs: "**/*.{ts,tsx,js,jsx,css,scss}"
+alwaysApply: false
+---
+# Frontend architecture
+
+- Follow the repository's established framework and routing conventions.
+- Use TypeScript for new application code and preserve strict typing. Avoid `any`; validate external data at its boundary.
+- Build from owned source components. Prefer shadcn primitives for accessibility and behavior, then style through semantic tokens.
+- Use one icon family by default: Phosphor. Keep icon weight and optical size consistent within a surface.
+- Separate content/data, presentation, and interaction. A component should not fetch remote data merely to render it unless the framework pattern requires that boundary.
+- Keep server-only credentials and SDKs outside client bundles. Never expose service-account keys, private API keys, or privileged tokens in browser code.
+- Prefer composition over giant configurable components. Extract only when it clarifies ownership or creates real reuse.
+- No new package without checking whether the repository or platform already provides the capability. Document material dependencies introduced by imported community components.
+- Reuse semantic CSS variables and design tokens. Do not scatter one-off hex values, arbitrary radii, or unrelated shadows through JSX.
+- Implement loading, empty, error, disabled, success, and retry states for every data-backed or AI-backed interaction.

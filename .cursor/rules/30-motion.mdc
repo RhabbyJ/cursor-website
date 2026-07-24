@@ -1,0 +1,16 @@
+---
+globs: "**/*.{tsx,jsx,css,scss}"
+alwaysApply: false
+---
+# Motion policy
+
+- Motion must communicate causality, hierarchy, state change, spatial continuity, or brand character. Never animate solely because a library is available.
+- Use CSS for simple hover/focus and one-off transitions.
+- Use Motion as the default React animation layer for gestures, presence, layout transitions, shared elements, and scroll-linked effects.
+- Use Anime.js only for complex timelines, SVG paths, canvas, object values, or imperative choreography that is materially clearer than Motion.
+- Use Animista only as a source for selected CSS keyframes. Copy the minimum keyframes locally, rename them semantically, and remove unused declarations.
+- Do not run Motion and Anime.js against the same element or interaction.
+- Prefer transform and opacity. Avoid repeatedly animating layout-triggering properties when a composited alternative exists.
+- Honor `prefers-reduced-motion`. Preserve comprehension and functionality with motion reduced or removed.
+- Avoid scroll-jacking, long blocking intros, cursor trails on touch devices, and autoplay motion that competes with reading.
+- Define durations/easings as shared tokens; do not improvise unrelated timing values in every component.

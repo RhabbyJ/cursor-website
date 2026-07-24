@@ -1,0 +1,14 @@
+---
+globs: "**/{api,lib,data,services,integrations}/**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+# Data and integration rules
+
+- Treat Google Sheets, CMSs, CRMs, feeds, and AI APIs as typed external systems with explicit contracts.
+- Validate and normalize external records before they reach presentation components.
+- Keep credentials server-side. Use environment variables and least-privilege service accounts.
+- Add timeouts, actionable errors, retry behavior where appropriate, and a safe fallback for temporary upstream failure.
+- Define caching and freshness intentionally. Surface a last-updated value when freshness matters to users.
+- Avoid direct spreadsheet-cell assumptions throughout the UI. Map source rows into stable domain objects in one adapter.
+- Log enough context to diagnose failures without logging secrets or sensitive user data.
+- When a site is powered by an operational data source, make that benefit visible in the experience: explain what can be updated, by whom, and how quickly changes appear.
