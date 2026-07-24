@@ -101,8 +101,13 @@ async function main() {
       timeout: 60000,
     });
     await page.getByRole("button", { name: "Request consultation" }).click();
+    await page.waitForSelector("#error-name", { timeout: 5000 }).catch(() => null);
     results.form.clientValidationVisible = await page
       .locator("#error-name")
+      .isVisible()
+      .catch(() => false);
+    results.form.formAlertVisible = await page
+      .locator("#consult [role='alert']")
       .isVisible()
       .catch(() => false);
     // Server returns field errors even if empty submit from client without local validate

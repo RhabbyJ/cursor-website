@@ -61,22 +61,28 @@ export function SheetsDemoSection() {
         </span>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-[1.25fr_0.75fr]">
-        <div className="border border-[var(--border)] bg-[var(--surface)]">
+      <div className="grid min-w-0 gap-4 lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="min-w-0 border border-[var(--border)] bg-[var(--surface)]">
           <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
             <p className="font-mono text-[11px] text-[var(--muted)] uppercase">
               Business Sheet
             </p>
             <p className="font-mono text-[11px] text-[var(--muted)]">local model</p>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[320px] text-left text-sm">
+          <div className="max-w-full overflow-x-auto">
+            <table className="w-full table-fixed text-left text-sm">
+              <colgroup>
+                <col className="w-[40%]" />
+                <col className="w-[22%]" />
+                <col className="w-[18%]" />
+                <col className="w-[20%]" />
+              </colgroup>
               <thead className="border-b border-[var(--border)] font-mono text-[10px] tracking-wide text-[var(--muted)] uppercase">
                 <tr>
-                  <th className="px-3 py-2 font-medium">Item</th>
-                  <th className="px-3 py-2 font-medium">Price</th>
-                  <th className="px-3 py-2 font-medium">Active</th>
-                  <th className="px-3 py-2 font-medium">Check</th>
+                  <th className="px-2 py-2 font-medium sm:px-3">Item</th>
+                  <th className="px-2 py-2 font-medium sm:px-3">Price</th>
+                  <th className="px-2 py-2 font-medium sm:px-3">Active</th>
+                  <th className="px-2 py-2 font-medium sm:px-3">Check</th>
                 </tr>
               </thead>
               <tbody>
@@ -84,26 +90,26 @@ export function SheetsDemoSection() {
                   const ok = validatePrice(row.price) && !row.invalid;
                   return (
                     <tr key={row.id} className="border-b border-[var(--border)]">
-                      <td className="px-3 py-2">
+                      <td className="px-2 py-2 sm:px-3">
                         <input
                           aria-label={`Item name for row ${row.id}`}
-                          className="w-full bg-transparent text-[var(--fg)] outline-none focus-visible:ring-1 focus-visible:ring-[var(--accent)]"
+                          className="w-full min-w-0 truncate bg-transparent text-[var(--fg)] outline-none focus-visible:ring-1 focus-visible:ring-[var(--accent)]"
                           value={row.item}
                           onChange={(e) => updateRow(row.id, { item: e.target.value })}
                         />
                       </td>
-                      <td className="px-3 py-2">
+                      <td className="px-2 py-2 sm:px-3">
                         <input
                           aria-label={`Price for ${row.item}`}
                           className={cn(
-                            "w-20 bg-transparent font-mono outline-none focus-visible:ring-1 focus-visible:ring-[var(--accent)]",
+                            "w-full min-w-0 bg-transparent font-mono outline-none focus-visible:ring-1 focus-visible:ring-[var(--accent)]",
                             ok ? "text-[var(--fg)]" : "text-[var(--danger)]",
                           )}
                           value={row.price}
                           onChange={(e) => updateRow(row.id, { price: e.target.value })}
                         />
                       </td>
-                      <td className="px-3 py-2">
+                      <td className="px-2 py-2 sm:px-3">
                         <input
                           type="checkbox"
                           aria-label={`Active ${row.item}`}
@@ -114,7 +120,7 @@ export function SheetsDemoSection() {
                           className="size-4 accent-[var(--accent)]"
                         />
                       </td>
-                      <td className="px-3 py-2 font-mono text-[11px]">
+                      <td className="px-2 py-2 font-mono text-[11px] sm:px-3">
                         {ok ? (
                           <span className="text-[var(--ok)]">ok</span>
                         ) : (

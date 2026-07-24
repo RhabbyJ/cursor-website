@@ -54,7 +54,10 @@ export function ConsultSection() {
     event.preventDefault();
     const localErrors = validateLocal(values);
     if (Object.keys(localErrors).length > 0) {
-      setErrors(localErrors);
+      setErrors({
+        ...localErrors,
+        form: "Please fix the highlighted fields.",
+      });
       setState("error");
       const first = Object.keys(localErrors)[0];
       document.getElementById(`field-${first}`)?.focus();
