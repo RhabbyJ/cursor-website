@@ -1,107 +1,61 @@
-# Site Specification
+# Site Specification — Redesign v2
 
 ## Experience classification
 
-**Hybrid marketing** — conversion-focused studio landing page that narrates operational and AI product capabilities through interface demonstrations (no live operational data on this site).
+Hybrid marketing with one interactive operational demonstration (in-browser Sheets preview; no live Google credentials).
 
-## Sitemap and route ownership
+## Sitemap
 
-| Route | Purpose | Ownership |
-|---|---|---|
-| `/` | Single-page landing (all sections) | Primary |
-| `/privacy`, `/terms` | Reserved for later | Placeholder footer links |
-| Future: `/work/[slug]`, `/services` | Case studies / deep dives | Not in v1 |
-
-Architecture: App Router with section components under `src/components/sections/` so routes can later compose the same sections.
-
-## Page narratives
-
-| Page/section | User question | Answer | Proof | Action |
-|---|---|---|---|---|
-| Nav | Where can I go? | In-page anchors + CTA | Persistent primary CTA | Consult / Work |
-| Hero | What do you build? | Websites, operational systems, AI software that run the business | Layered interface demo | Consult / View work |
-| Studio | What is this studio? | Systems behind the website | Positioning statement | Continue |
-| Services | What can you build for me? | Concrete service list spanning sites → apps | Capability grid with icons | Consult |
-| Work | Have you built this before? | HarnessMate, Sheets bars, MyBird | Project presentations | Anchor to projects |
-| Sheets | How do staff update content? | Sheet → validate → site updates | Visual 4-step operating model | Discuss for my business |
-| AI & software | Do you build real software? | Portals, dashboards, search, automation, AI tools | Capability panels | Consult |
-| Process | How do we work together? | Discovery → system design → build → operate | Ordered steps | Consult |
-| Difference | Why not a normal agency? | Agency ships pages; we ship operating systems | Contrast list | Consult |
-| CTA | What should I do? | Request a consultation / estimate | Clear form | Submit |
-| Footer | How else do I reach you? | Contact + legal placeholders | Links | Email |
-
-## Component map
-
-**Owned / local**
-
-- `SiteHeader`, `SiteFooter`
-- `HeroSystemLayers` (signature multi-layer demo)
-- `StudioIntro`, `ServicesGrid`, `FeaturedWork`, `SheetsOperatingModel`, `AiCapabilities`, `ProcessSteps`, `AgencyDifference`, `ConsultCta`
-- Design tokens in CSS variables
-- Motion primitives (`FadeIn`, `Reveal`)
-
-**shadcn primitives (normalized)**
-
-- `Button`, `Input`, `Textarea`, `Label`, `Separator` (as needed)
-
-**Not used in v1**
-
-- 21st.dev dumps, card-heavy pricing, fake testimonial carousels, Anime.js
-
-## Content model and sources
-
-| Content | Source | Notes |
-|---|---|---|
-| Brand, positioning, services | `docs/site-brief.md` + static TS content module | No CMS |
-| Project case content | Owner-provided capabilities only | No metrics |
-| Form fields | Name, business, email, project type, message | Client-side validation |
-
-## Interaction flows and states
-
-### Consultation form
-
-| State | Behavior |
+| Route | Purpose |
 |---|---|
-| Idle | Empty fields, enabled submit |
-| Validation error | Inline field errors; focus first invalid |
-| Submitting | Disabled submit; “Sending…” label |
-| Success | Confirmation message; form clears or hides |
-| Error | Retry message if mailto/open fails |
+| `/` | Landing (all sections) |
+| `/api/consult` | Server consultation submit |
+| `/privacy` | Privacy notice (minimal, honest) |
 
-No loading/empty data states for remote content (static page).
+## Page narrative
 
-### Navigation
+| Section | User question | Answer | Proof | Action |
+|---|---|---|---|---|
+| Nav | Where? | Work / Modes / Process / Consult | Persistent CTA | Jump / consult |
+| Hero | What do you build? | Sites tied to data, workflows, software | Animated edit→validate→site→customer | Consult / Work |
+| Proof strip | Who have you built for? | Named projects + honest status | Compact project chips | Deep-link cases |
+| Modes | How do we engage? | Communicate → Operate → Perform | Progressive capability stack | Consult |
+| HarnessMate | Can you build real software? | Engineering platform workflow | Search/mate/decision path UI | — |
+| Sheets | How do staff update a site? | Sheet drives public view | Interactive demo + invalid row | Try demo |
+| MyBird | Real estate too? | Discovery → contextual inquiry | Flow composition | — |
+| Process | How do we work? | Four stages | Numbered rail | Consult |
+| Founder | Who do I work with? | Solo/studio operator + product proof | Placeholder identity | Consult |
+| Consult | What’s next? | Request estimate | Working form | Submit |
+| Footer | Contact / legal | Email + privacy | Links | — |
 
-- Smooth scroll to section anchors
-- Mobile menu: open/close, Escape, focus trap-lite, body scroll lock optional
-- Keyboard: Tab through controls; visible focus rings
+## Removed
 
-## Data contracts
+- Standalone Studio section
+- Nine-service grid / AI capability map
+- Agency comparison table
 
-None for v1. Future Sheets/CRM adapters live under `src/lib/adapters/` when needed.
+## Integrated ideas
 
-## AI contracts
+- “System behind the website” → once, immediately after hero
+- Agency contrast → one line inside Modes or Founder
+- AI capability → mentioned inside Mode 3 and HarnessMate decision support only
 
-None on-page. Marketing only.
+## Content rules
 
-## Analytics events
+- Cut guardrail/meta language from public copy
+- Prefer short captions under demos
+- Honest status: Prototype demo / In development / Private implementation
+- No invented metrics, clients, team, or testimonials
 
-| Event | Trigger | Purpose |
-|---|---|---|
-| `cta_consult_click` | Primary CTA | Funnel |
-| `cta_work_click` | Secondary CTA | Engagement |
-| `consult_submit_success` | Form success | Conversion |
-| `nav_section_click` | Section jump | Navigation quality |
+## Form contract
 
-Implement as typed helpers; wire to `console`/`dataLayer` stub until analytics is chosen.
+- Server-side validation on `POST /api/consult`
+- Fields: name, business, email, projectType, message, website (honeypot)
+- States: idle, validating, submitting, success, error
+- Spam: honeypot + basic rate limit
+- Delivery: write inbox file when no email provider configured; optional `CONSULT_WEBHOOK_URL`
+- Privacy: link to `/privacy`
 
-## SEO and sharing
-
-- Title: `Operator — Websites, systems, and AI software for business`
-- Description: concrete offer sentence (no fluff)
-- Open Graph title/description matching
-- Semantic landmarks: `header`, `main`, `footer`, section headings
-
-## Acceptance criteria link
+## Acceptance
 
 See `docs/acceptance.md`.

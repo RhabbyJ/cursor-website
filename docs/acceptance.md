@@ -1,48 +1,54 @@
-# Acceptance Criteria
+# Acceptance Criteria — Redesign v2
 
-## Strategy and content
-
-- [x] First viewport identifies studio (Operator), offer (websites + operational systems + AI software), differentiator (system behind the website), and primary action (consultation).
-- [x] Headline is concrete and business-oriented (rooted in “Your website should run your business, not just describe it”).
-- [x] No unverified claims, invented testimonials, revenue figures, or fake metrics.
-- [x] HarnessMate, Sheets-powered bars, and MyBird are presented with truthful capability language.
-- [x] Sheets operating model is visually understandable in four steps.
-
-## Product and data
-
-- [x] Consultation form validates required fields and shows success/error states.
-- [x] No client-side secrets; no fake live data presented as production.
-
-## Visual and responsive
-
-- [x] Follows Control Plane visual direction (dark graphite, steel accent, Syne + IBM Plex).
-- [x] Section compositions vary; not a repeating three-card pattern.
-- [x] Visually inspected at ~375px, ~768px, ~1280px, and ~1536px+.
-- [x] Hero communicates multi-layer system without meaningless floating dashboard cards.
-
-## Accessibility
-
-- [x] Keyboard navigation and visible focus on all interactive controls.
-- [x] Form labels associated with inputs; errors announced/associated.
-- [x] Semantic landmarks and heading order intact.
-- [x] `prefers-reduced-motion` disables non-essential motion.
-
-## Runtime and engineering
-
-- [x] No unexpected console errors or failed network calls on load.
-- [x] `lint`, `typecheck`, and `build` pass.
-- [x] Assumptions (brand name, contact email) documented in the final report.
-
-## Required sections present
+## Structure
 
 - [x] Navigation
-- [x] Hero
-- [x] Studio explanation
-- [x] Services
-- [x] Featured work
-- [x] Google Sheets–powered explanation
-- [x] AI and software capabilities
-- [x] Development process
-- [x] Why different from a normal agency
-- [x] Consultation CTA
+- [x] Hero with edit → validate → publish → customer flow
+- [x] Selected-work proof strip with honest statuses
+- [x] Three progressive engagement modes
+- [x] HarnessMate flagship case study
+- [x] Interactive Sheets demonstration
+- [x] MyBird case study
+- [x] Four-stage process
+- [x] Founder / trust (placeholders where identity missing)
+- [x] Consultation form
 - [x] Footer
+- [x] Removed Studio / AI map / agency comparison as standalone sections
+
+## Copy
+
+- [x] Headline retained
+- [x] “We build the system behind the website” appears once after hero
+- [x] No public guardrail meta-copy
+- [x] No invented metrics / testimonials
+
+## Interaction
+
+- [x] Sheets demo updates preview; invalid rows blocked
+- [x] Form: client + server validation, loading, success, error, honeypot, privacy link
+- [x] Form tested via POST /api/consult → `{ ok: true }` and Playwright success state
+
+## Motion
+
+- [x] Signature Motion only on hero flow, Sheets preview, HarnessMate steps
+- [x] Reduced motion preserves information
+
+## Visual (Field Manual)
+
+- [x] Brass signal accent; fewer repeated kicker+panel blocks
+- [x] Shared DataRail motif in hero + differentiator + process
+- [x] HarnessMate emphasized in proof strip; Sheets demo reserved for `#sheets`
+- [x] Differentiator strip carries the single “system behind the website” line
+
+## Engineering
+
+- [x] lint / typecheck / build pass
+- [x] Browser QA across 320–1728 widths
+
+## Still placeholder / unverified
+
+- [ ] Founder name, photo, biography
+- [ ] Real project screenshots / asset pack (none in repo)
+- [ ] CONSULT_WEBHOOK_URL / email provider (defaults to local `data/consult-inbox.jsonl`)
+- [ ] Brand name and contact email confirmation
+- [ ] Production deploy / real spam volume under load

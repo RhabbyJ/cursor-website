@@ -1,24 +1,26 @@
-import { AiCapabilitiesSection } from "@/components/sections/ai-capabilities";
 import { ConsultSection } from "@/components/sections/consult";
-import { DifferenceSection } from "@/components/sections/difference";
-import { FeaturedWorkSection } from "@/components/sections/featured-work";
+import { DifferentiatorStrip } from "@/components/sections/differentiator";
+import { EngagementModesSection } from "@/components/sections/engagement-modes";
+import { FounderSection } from "@/components/sections/founder";
+import { HarnessMateSection } from "@/components/sections/harnessmate";
 import { HeroSection } from "@/components/sections/hero";
+import { MyBirdSection } from "@/components/sections/mybird";
 import { ProcessSection } from "@/components/sections/process";
-import { ServicesSection } from "@/components/sections/services";
-import { SheetsSection } from "@/components/sections/sheets";
-import { StudioIntroSection } from "@/components/sections/studio-intro";
+import { ProofStripSection } from "@/components/sections/proof-strip";
+import { SheetsDemoSection } from "@/components/sections/sheets-demo";
 
 export default function HomePage() {
   return (
     <main id="main">
       <HeroSection />
-      <StudioIntroSection />
-      <ServicesSection />
-      <FeaturedWorkSection />
-      <SheetsSection />
-      <AiCapabilitiesSection />
+      <DifferentiatorStrip />
+      <ProofStripSection />
+      <EngagementModesSection />
+      <HarnessMateSection />
+      <SheetsDemoSection />
+      <MyBirdSection />
       <ProcessSection />
-      <DifferenceSection />
+      <FounderSection />
       <ConsultSection />
     </main>
   );

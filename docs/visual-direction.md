@@ -1,104 +1,67 @@
-# Visual Direction
+# Visual Direction — Redesign v2
 
 ## Desired belief and tone
 
-Belief: this is a precise software studio that builds operating systems for businesses—not a freelance portfolio or generic agency.
+Belief after first screen: Operator connects websites to the data and workflows a business actually runs—and I can see proof before I enquire.
 
-Tone: technical, confident, high quality, modern, precise, slightly futuristic without cyberpunk cliché.
+Tone: operational-editorial. Precise, calm, industrial. Field-manual clarity without coldness. Founder-operated studio, not agency theater.
 
-## Candidate directions
+## Selected premise: “Field Manual”
 
-### Direction A — “Control Plane”
+Inspired by technical manuals, product documentation, system diagrams, and editorial software case studies.
 
-Dark graphite workspace aesthetic. Multi-panel layered interfaces as the primary visual language. Hairline borders, monospace accents for system labels, cool steel blue as the only accent. Feels like infrastructure software.
+### Tokens
 
-### Direction B — “Daylight Engineering”
+| Role | Value |
+|---|---|
+| Canvas | `#0C0E11` |
+| Ink / text | `#E7EAEF` |
+| Muted | `#8B93A1` |
+| Rule / border | `#2C3340` |
+| Surface | `#14181F` |
+| Signal accent | `#C8A45A` (restrained brass — not purple, not neon) |
+| Accent soft | `rgba(200, 164, 90, 0.12)` |
+| OK | `#4EAE84` |
+| Danger | `#D16666` |
+| Display | Syne |
+| Body | IBM Plex Sans |
+| Mono | IBM Plex Mono — **only** for part numbers, statuses, sheet cells, metadata |
 
-Bright paper surfaces, deep ink typography, restrained teal accent. Editorial layout with technical diagrams. Feels like a high-end product brochure for engineering tools.
+### Layout grammar
 
-### Direction C — “Warm Terminal”
+- Asymmetrical case-study grids (copy 5 / proof 7 or reverse)
+- Horizontal data rails and connecting rules instead of card stacks
+- Section rhythm alternates: full-bleed proof → narrow editorial column → interactive split
+- Radii: 2–6px; prefer sharp documentation panels
+- Shadows rare; structure via 1px rules
+- No repeating “eyebrow + H2 + paragraph + 3 cards” block
 
-Cream canvas with charcoal type and amber terminal accents. Dense type and grid rules. Risks overlapping the “cream + terracotta agency” anti-pattern cluster.
+### Signature motif
 
-## Decision matrix
+**Data rail** — a thin horizontal or vertical rule that carries status ticks and flow arrows (edit → validate → publish → view).
 
-| Direction | Audience fit | Distinctiveness | Content fit | Accessibility | Performance | Risk |
-|---|---:|---:|---:|---:|---:|---:|
-| A Control Plane | 5 | 5 | 5 | 4 | 5 | Low–med (dark contrast care) |
-| B Daylight Engineering | 4 | 4 | 4 | 5 | 5 | Medium (can feel brochure-y) |
-| C Warm Terminal | 3 | 3 | 3 | 4 | 5 | High (generic cream cluster) |
+## Motion map (3 signatures only)
 
-## Selected direction
+| Trigger | Element | Purpose | Technique | Reduced motion |
+|---|---|---|---|---|
+| Load / in-view once | Hero flow stages | Cause-and-effect: edit→validate→site→customer | Motion staggered opacity + x, shared timeline | Show final connected state statically |
+| User edit / toggle | Sheets demo | Preview updates when sheet data changes | Motion layout on preview rows | Instant state swap, flash status text |
+| Step click / autoplay once | HarnessMate workflow | Search → select → mate → decide | Motion crossfade panels | Tabbed static panels |
 
-**Direction A — Control Plane**
-
-Matches the multi-layer hero (website / data / automation / AI), suits engineering + hospitality + founder audiences when executed with clarity (not neon), and supports HTML/CSS interface demos without stock photography.
-
-## Typography
-
-- **Display / brand:** `Syne` — geometric, modern, slightly industrial
-- **Body / UI:** `IBM Plex Sans` — technical clarity, excellent for product UI copy
-- **Mono / system labels:** `IBM Plex Mono` — layer tags, step numbers, schema labels
-
-Scale character: confident display sizes on hero; tight, readable body; mono reserved for “system” captions only.
-
-## Color and surfaces
-
-| Role | Token | Value |
-|---|---|---|
-| Canvas | `--bg` | `#0B0D10` |
-| Raised surface | `--surface` | `#12151A` |
-| Elevated | `--surface-2` | `#1A1F27` |
-| Border | `--border` | `#2A3140` |
-| Border strong | `--border-strong` | `#3D4658` |
-| Text | `--fg` | `#E8ECF2` |
-| Muted text | `--muted` | `#9AA3B2` |
-| Accent | `--accent` | `#5B8CFF` |
-| Accent soft | `--accent-soft` | `rgba(91, 140, 255, 0.14)` |
-| Success | `--ok` | `#3DCF8E` |
-| Warning | `--warn` | `#E6B84D` |
-
-Contrast strategy: light text on dark surfaces; accent used sparingly for CTAs and active layer indicators. Borders define structure more than shadows.
-
-## Layout grammar and rhythm
-
-- Max content width: ~1120–1200px; hero may use full-bleed atmosphere with constrained copy column
-- Section rhythm: alternate dense narrative blocks with one wide demonstration composition—never identical card grids stacked
-- Spacing scale: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96
-- Radii: `4` (controls), `8` (panels), `12` (large frames)—no pill-everywhere
-- Shadows: minimal; prefer border + subtle elevation glow only on focused interactive panels
-
-## Image/product-demo approach
-
-No stock photos. All proof via interface compositions:
-
-1. **Hero layers:** stacked translucent panels representing public site, sheet data, automation, AI
-2. **HarnessMate:** search + mate + spec panel mock
-3. **Sheets model:** 4-step horizontal/vertical flow with sheet → validated → site
-4. **MyBird:** property discovery + inquiry workflow strip
-
-## Signature motif or interaction
-
-**Layer stack** — a recurring visual of stacked system planes with a selectable/highlighted active layer. Used in the hero and echoed as a small motif in section labels (e.g. `L01`, `L02`).
-
-## Motion character
-
-Restrained. Entrances: short fade + 8–12px rise. Hero: staggered layer reveal once. Hover: border/accent shift, not bounce. Scroll: optional layer highlight sync. No scroll-jacking. Reduced motion: static final state, no stagger.
-
-## Mobile adaptation
-
-- Hero layers collapse to a vertical stack with abbreviated labels
-- Services become a single-column list with icon + title + one line
-- Featured work: full-width project blocks stacked
-- Sticky compact header with menu sheet
-- CTA form full-width fields
+No blanket fade-up on section entrances.
 
 ## Anti-patterns
 
-- Purple/indigo startup gradients
-- Cream + terracotta editorial cliché
-- Glassmorphism blobs and neon cyberpunk grids
-- Three identical rounded feature cards repeating every section
-- Fake analytics dashboards and invented testimonials
-- Giant empty hero with centered fluff headline
-- Animating every element on scroll
+- Purple AI gradients, glassmorphism, glowing cards
+- Nine equal service tiles; three identical engagement cards
+- Guardrail meta-copy (“no invented metrics”, “not instant magic”)
+- “LIVE UI MODEL” badges on non-live demos
+- Repeating L0x eyebrow pattern every section
+- Decorative blobs / floating analytics
+
+## Mobile recomposition
+
+- Hero flow: vertical rail with 4 stages (not side-by-side desktop diagram)
+- Sheets: stacked Sheet editor above preview; sticky “Apply” on small screens
+- Engagement modes: progressive list with indent/level markers, not 3 equal cards
+- Case studies: full-width product composition first, copy below

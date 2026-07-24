@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 docs/qa-artifacts/
+*.zip
 
 # debug
 npm-debug.log*
@@ -33,6 +34,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+
+# consultation inbox (local persistence when webhook unset)
+/data/
 
 # vercel
 .vercel

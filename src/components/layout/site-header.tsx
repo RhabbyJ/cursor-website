@@ -4,8 +4,8 @@ import { List, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
+import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
 import { navLinks, site } from "@/lib/content";
 import { cn } from "@/lib/utils";
@@ -37,19 +37,18 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-200",
+        "sticky top-0 z-50 h-16 border-b transition-[background-color,border-color] duration-200",
         scrolled || open
-          ? "border-[var(--border)] bg-[color-mix(in_oklab,var(--bg)_88%,transparent)] backdrop-blur-md"
+          ? "border-[var(--border)] bg-[var(--bg)]"
           : "border-transparent bg-transparent",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          className="font-display text-lg tracking-tight text-[var(--fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+          className="font-display text-lg tracking-tight text-[var(--fg)]"
         >
           {site.name}
-          <span className="sr-only"> home</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
@@ -58,7 +57,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               onClick={() => track("nav_section_click", { href: link.href })}
-              className="rounded-md px-3 py-2 text-sm text-[var(--muted)] transition-colors hover:text-[var(--fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+              className="rounded-[var(--radius-md)] px-3 py-2 text-sm text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
             >
               {link.label}
             </a>
@@ -103,7 +102,7 @@ export function SiteHeader() {
                 track("nav_section_click", { href: link.href, mobile: true });
                 setOpen(false);
               }}
-              className="rounded-md px-3 py-3 text-base text-[var(--fg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+              className="rounded-[var(--radius-md)] px-3 py-3 text-base text-[var(--fg)]"
             >
               {link.label}
             </a>
