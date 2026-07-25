@@ -1,59 +1,41 @@
 # Manifest
 
-## Core
+## Always-on Rules
 
-- `README.md`
-- `INSTALL.md`
-- `MIGRATION_FROM_V1.md`
-- `MANIFEST.md`
+- `.cursor/rules/00-project-authority.mdc`
+- `.cursor/rules/10-web-quality-baseline.mdc`
 
-## Cursor configuration
+## Optional Rules
 
-- `.cursor/mcp.json`
-- `.cursor/rules/00-core.mdc`
-- `.cursor/rules/10-visual-quality.mdc`
-- `.cursor/rules/20-frontend-architecture.mdc`
-- `.cursor/rules/30-accessibility-performance.mdc`
-- `.cursor/rules/40-data-integrations.mdc`
-
-## Agents
-
-- `.cursor/agents/art-director.md`
-- `.cursor/agents/implementation-engineer.md`
-- `.cursor/agents/visual-judge.md`
-- `.cursor/agents/qa-verifier.md`
+- `.cursor/rules/20-tool-discovery.mdc`
 
 ## Skills
 
-- `build-website`
-- `experience-brief`
-- `tool-preflight`
-- `asset-inventory`
-- `visual-exploration`
-- `component-scout`
-- `hero-prototype`
-- `editorial-pass`
-- `motion-composition`
-- `visual-judge`
-- `browser-qa`
-- `sheets-powered`
-- `ai-product-experience`
-- `postmortem`
+- `build-web-experience`
+- `creative-brief`
+- `visual-directions`
+- `visual-source-scout`
+- `signature-surface-pass`
+- `asset-quality-pass`
+- `composition-lab`
+- `component-research`
+- `visual-assets`
+- `motion-design`
+- `responsive-composition`
+- `content-editing`
+- `browser-critique`
+- `production-qa`
+- `promote-pattern`
 
-## Documentation
+## Subagents
 
-- `docs/AUDIT_V1_FAILURE.md`
-- `docs/TOOL_SETUP.md`
-- `docs/templates/*`
+- `art-director`
+- `interaction-designer`
+- `frontend-engineer`
+- `visual-critic`
 
-## Prompts
+## MCP and registries
 
-- `prompts/build-studio-landing-page.md`
-- `prompts/visual-reset-existing-page.md`
-
-## Scripts
-
-- `scripts/new-site-docs.sh`
-- `scripts/new-site-docs.ps1`
-- `scripts/verify-web.sh`
-- `scripts/visual-system-audit.mjs`
+- shadcn project MCP is preconfigured.
+- Aceternity UI is added as a namespaced shadcn registry through the included script.
+- 21st, Magic UI, Motion AI Kit, and React Bits Pro are configured through their supported installers or registries.

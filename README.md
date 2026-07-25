@@ -1,115 +1,125 @@
-# Website OS v2 — Visual-First Cursor Starter
+# Web Design OS for Cursor — Source-First / Style-Neutral Edition
 
-This starter turns Cursor into a **visual-first website studio**, not a checklist-driven page generator.
+This is a **general operating layer for designing and building websites with Cursor**. It is not a theme, template, landing-page recipe, or fixed visual system.
 
-Version 1 improved structure and engineering discipline, but it could still produce austere, repetitive websites because a prose design document was allowed to stand in for visual art direction. Version 2 changes the order of work:
+The project prompt decides what the website should be. The OS contributes a repeatable way to:
 
-```text
-Brief and quality profile
-        ↓
-Tool and asset preflight
-        ↓
-Three rendered visual routes
-        ↓
-Route selection
-        ↓
-Hero + one proof slice prototype
-        ↓
-Screenshot-based visual gate
-        ↓
-Full-page implementation
-        ↓
-Editorial subtraction
-        ↓
-Motion composition
-        ↓
-Blind visual judgment + technical QA
-```
+- understand the product and audience;
+- discover strong references and components;
+- choose an intentional art direction;
+- compose navigation, backgrounds, sections, imagery, and motion;
+- implement the experience cleanly;
+- inspect the real browser result;
+- and improve it without flattening every project into the same style.
 
-## The non-negotiable change
-
-For high-ambition marketing, portfolio, and studio work, Cursor **must not build the entire page immediately**. It first creates three materially different visual routes as runnable prototypes. A route is selected only after viewing the rendered output. Prose such as “industrial,” “editorial,” or “premium” is not accepted as visual proof.
-
-## What this starter fixes
-
-- MCP tools are tested and logged before design work begins.
-- External component discovery is required at higher design-ambition levels, but installation remains selective.
-- Real project evidence is required for portfolio acceptance.
-- Utility icons and brand expression are treated differently.
-- One signature visual experience is expected on high-ambition pages.
-- A blind visual judge can reject a technically correct but visually weak result.
-- Editorial reduction happens after implementation so the first draft does not remain bloated.
-- Rules are shorter and more positive; procedural detail lives in dynamically loaded skills.
-
-## Important terms
-
-### Design ambition
-
-A 1–10 target stored in `docs/quality-profile.md`.
-
-- Internal/admin UI: usually 4–6
-- Operational product UI: usually 5–7
-- Product marketing: usually 7–8
-- Creative studio/portfolio: usually 8–9
-- Campaign or experimental experience: usually 9–10
-
-The studio landing-page prompt defaults to **9**.
-
-### Signature experience
-
-One polished visual or interactive moment that could be recognized in a screenshot or short recording. Examples include a beautifully choreographed product flow, shader-backed hero, spatial project gallery, kinetic typography sequence, or a highly polished interactive business-data demonstration.
-
-### Visual route
-
-A runnable mini-page containing the hero and one proof/case-study slice. Route A, B, and C must differ in composition, typography character, depth, imagery, and motion—not merely accent color.
-
-## Install
-
-Read `INSTALL.md`, then copy this starter's **contents** into the root of a fresh or existing Cursor project. For an existing v1 project, read `MIGRATION_FROM_V1.md` first.
-
-## First command in Cursor
-
-For a new site:
+## The central separation
 
 ```text
-/build-website
-
-Read prompts/build-studio-landing-page.md and execute it exactly.
+Project prompt / brand / references
+             ↓
+Defines the site's identity and requirements
+             ↓
+Web Design OS
+             ↓
+Guides exploration, implementation, motion, critique, and QA
+             ↓
+MCPs and component libraries
+             ↓
+Supply raw materials—not the final design
 ```
 
-For the current austere or generic build:
+No visual treatment is universally required or prohibited. A project may be minimal, cinematic, playful, editorial, brutalist, elegant, image-led, shader-heavy, quiet, dense, rounded, sharp, light, dark, or something else entirely.
 
-```text
-/build-website
+## Why this edition is different
 
-Read prompts/visual-reset-existing-page.md. Preserve working behavior, but replace the visual direction using the v2 visual-route workflow. Do not build the complete redesign until a route passes the hero prototype gate.
+The always-on Rules are intentionally small. They protect project authority, accessibility, responsiveness, honesty, and runtime verification—but they do not dictate an aesthetic.
+
+Most guidance lives in optional Skills that Cursor loads only when relevant. This prevents the OS from forcing one design grammar onto every website.
+
+## Included
+
+- 2 concise always-on Cursor Rules;
+- 15 optional web-design Skills;
+- 4 optional specialist Subagents;
+- project-scoped shadcn MCP configuration;
+- setup guidance for 21st, Magic UI, Motion AI Kit, and React Bits Pro;
+- prompts for directed, exploratory, and autonomous design workflows;
+- a fresh-project generator for PowerShell and Bash;
+- project-brief and review templates;
+- a validation script.
+
+## Fast start
+
+### Option A — generate a fresh Next.js project
+
+From this extracted folder:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/create-fresh-next-project.ps1 -Name my-new-site
 ```
 
-## Directory map
+Or:
+
+```bash
+bash scripts/create-fresh-next-project.sh my-new-site
+```
+
+The script creates a new Next.js project and copies the OS into it.
+
+### Option B — add the OS to an already blank project
+
+Copy these items into the project root:
 
 ```text
 .cursor/
-  rules/                 short persistent standards
-  skills/                dynamic workflows
-  agents/                independent specialists
-  mcp.json               project-scoped shadcn MCP
-
-docs/
-  templates/             generated project documents
-  AUDIT_V1_FAILURE.md    why the prior system produced weak output
-  TOOL_SETUP.md          current tool setup and expectations
-
-prompts/
-  build-studio-landing-page.md
-  visual-reset-existing-page.md
-
+website-os/
+PROJECT_BRIEF.md
 scripts/
-  new-site-docs.sh
-  new-site-docs.ps1
-  verify-web.sh
-  visual-system-audit.mjs
+WEBSITE_OS_START_HERE.md  (copy START_HERE.md under this name if desired)
 ```
 
-## Philosophy
+Then reopen Cursor.
 
-The machine should reduce repetitive labor without removing the highest-leverage human decision: selecting the visual direction. Everything after that selection can be heavily automated.
+## First project workflow
+
+1. Enable the shadcn MCP in Cursor.
+2. Configure any optional design tools you own or want to use.
+3. Fill in `PROJECT_BRIEF.md` or provide an equally detailed prompt.
+4. Choose a design mode:
+   - `directed` — follow supplied references and art direction;
+   - `explore` — build several compact visual routes for selection;
+   - `autonomous` — explore internally and let the agents select the strongest route.
+5. Run:
+
+```text
+/build-web-experience
+```
+
+The OS must follow the active project brief. It must not reuse the look of a previous project.
+
+## Recommended tool roles
+
+- **shadcn/ui:** accessible foundations and registry infrastructure.
+- **Aceternity UI:** expressive hero, background, navigation, card, and spatial primitives through the shadcn registry.
+- **21st:** discovery across components, themes, templates, SVG assets, and design directions.
+- **Magic UI:** animated effects, backgrounds, text treatments, and marketing primitives.
+- **Motion / Motion AI Kit:** interaction design, scroll and layout motion, examples, springs, and motion auditing.
+- **React Bits Pro:** optional premium shaders, backgrounds, 3D, animated UI, blocks, and templates.
+- **Cursor Browser:** rendered inspection, responsive testing, console/network review, and visual iteration.
+- **Cursor image generation:** original decorative imagery and concept art—not fake product proof.
+
+Read `website-os/TOOL_ROLES.md` before installing everything. More tools do not automatically produce better design.
+
+## Core principle
+
+> The OS should improve the model's taste and process without deciding what every website should look like.
+
+
+## The two-stage design loop
+
+External design sourcing happens twice:
+
+1. **Before concepts:** broad scouting gives each route a real visual vocabulary and prevents raw AI-CSS defaults.
+2. **After selection:** the winning route receives a mandatory signature-surface, asset-quality, responsive-motion, and browser-critique pass before the complete site is expanded.
+
+This avoids wasting production-level polish on three losing concepts while preventing the selected baseline from being mistaken for a finished design.

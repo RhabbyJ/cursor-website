@@ -1,0 +1,17 @@
+---
+description: Applies the non-stylistic quality baseline for production web experiences.
+alwaysApply: true
+---
+# Web quality baseline
+
+- Build semantic, responsive, keyboard-accessible experiences with visible focus and meaningful reduced-motion behavior.
+- Use real content and real product evidence when available. Never invent testimonials, metrics, customers, partnerships, results, credentials, or product interfaces.
+- Generated imagery may support a brand concept but must not impersonate real customer work or product proof.
+- Inspect the actual rendered result in a browser. Source-code review alone is not visual QA.
+- Recompose complex layouts for smaller screens; do not merely stack every desktop block.
+- Prefer maintainable components and clear ownership, but do not flatten a distinctive composition into generic abstractions too early.
+- Keep client-side code focused. Do not make an entire page a client component solely for animation.
+- Choose dependencies intentionally and remove abandoned experiments.
+- Check loading, empty, error, success, hover, focus, active, and disabled states where they apply.
+- Respect performance budgets, avoid unnecessary layout thrashing, and provide fallbacks for expensive visual effects.
+- A page is not complete merely because all requested content exists. It must communicate clearly, feel intentional, and work in the target environments.

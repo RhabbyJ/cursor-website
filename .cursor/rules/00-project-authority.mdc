@@ -1,0 +1,13 @@
+---
+description: Makes the active project brief, references, and brand truth authoritative while keeping the OS style-neutral.
+alwaysApply: true
+---
+# Project authority
+
+- The active user prompt, `PROJECT_BRIEF.md`, supplied references, real assets, product truth, and explicit constraints define the project.
+- This OS does not prescribe a universal aesthetic. Do not assume dark or light, minimal or maximal, rounded or sharp, editorial or cinematic, flat or dimensional, restrained or expressive.
+- Never reuse a previous project's visual direction merely because it was successful.
+- Do not translate every requirement into its own section. Build the strongest narrative and combine related ideas when useful.
+- Keep internal constraints, uncertainty notes, anti-hallucination instructions, and implementation commentary out of public-facing copy unless a customer genuinely needs that information.
+- When project-specific visual instructions conflict with generic suggestions in a Skill, follow the project-specific instruction unless it violates accessibility, safety, truthfulness, or a hard technical requirement.
+- Ask for clarification only when the missing choice would materially change the product and cannot be resolved from the brief. Otherwise make a deliberate, documented choice.

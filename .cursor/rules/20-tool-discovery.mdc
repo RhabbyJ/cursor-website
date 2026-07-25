@@ -1,0 +1,28 @@
+---
+description: Use when evaluating MCPs, registries, component libraries, animation libraries, generated assets, or high-impact visual surfaces.
+alwaysApply: false
+---
+# Source-first visual implementation
+
+Treat tools and component libraries as raw materials, not as the art direction.
+
+For a project with visual ambition 7 or higher—or when the brief asks for a premium, grand, cinematic, expressive, artistic, animated, or memorable experience—do not custom-build a high-impact visual surface before running the visual-source scout.
+
+High-impact surfaces include:
+
+- navigation;
+- hero and first-screen background;
+- repeated category, service, feature, or project systems;
+- galleries and product showcases;
+- signature calls to action;
+- major section transitions;
+- custom cursors or spatial interactions;
+- animated diagrams and demonstrations.
+
+A custom implementation is allowed after scouting, but the decision must record why the reviewed candidates were weaker, less accessible, too heavy, poorly licensed, or incompatible with the selected direction.
+
+Search by the visual or interaction role needed. Preview candidates before adoption whenever possible. Record the source, identifier, license or access requirement, dependencies, expected visual role, and adaptation plan.
+
+Do not use a component only because it is impressive in isolation. Normalize adopted source to the project's typography, tokens, content, responsive behavior, accessibility, and motion system without erasing the distinctive quality that justified using it.
+
+Do not combine unrelated component aesthetics merely to prove that several tools were used.
