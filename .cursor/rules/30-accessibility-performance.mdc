@@ -1,0 +1,12 @@
+---
+globs: "**/*.{tsx,jsx,html,css,scss}"
+alwaysApply: false
+---
+# Accessibility and performance
+
+- Use semantic HTML and native controls first. Maintain logical headings, landmarks, labels, visible focus, and keyboard operation.
+- Important information cannot depend on color, hover, or animation alone.
+- Every signature animation needs a reduced-motion equivalent that preserves the final meaning and interaction.
+- Reserve media dimensions, optimize initial assets, and avoid loading expensive effects before they are needed.
+- Measure the actual result. A performance warning is a design constraint to solve, not a reason to prohibit all ambitious visuals in advance.
+- Check console and network failures, touch behavior, focus order, responsive overflow, and form announcements before completion.

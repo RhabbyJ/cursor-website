@@ -1,0 +1,14 @@
+---
+globs: "**/*.{ts,tsx,js,jsx,css,scss}"
+alwaysApply: false
+---
+# Frontend architecture
+
+- Follow the repository's framework, package manager, routing, and component conventions unless a documented blocker requires change.
+- Use strict TypeScript for new application code. Validate external data at its boundary and keep secrets server-side.
+- Prefer server components for static content and small focused client components for interaction or motion.
+- Use owned source components. Adapt imported registry components to project tokens, content, responsive behavior, accessibility, and motion language.
+- Separate content/data, visual presentation, and interaction logic.
+- Centralize meaningful tokens, but do not force every visual choice into one generic component API.
+- A new dependency is justified by a real visual or functional requirement, not by library availability alone.
+- Preserve working behavior and tests during visual redesigns.

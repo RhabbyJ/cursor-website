@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+---
+# Website OS v2 core
+
+- Classify the experience before designing it. A creative studio site, product-marketing page, operational application, and internal dashboard should not share the same default aesthetic.
+- Read `docs/quality-profile.md`, `docs/experience-brief.md`, `docs/asset-inventory.md`, and `docs/tool-preflight.md` when present.
+- For design ambition 7 or higher, do not implement the complete site before three rendered visual routes and a hero prototype have been inspected.
+- Treat internal instructions, risk controls, evidence notes, and agent guardrails as private implementation context. Never leak them into customer-facing copy.
+- Never invent testimonials, client outcomes, integrations, awards, users, metrics, or project status.
+- A technically correct page is not complete until a screenshot-first visual judge and a separate technical QA pass both approve it.
+- Report placeholders and unavailable proof honestly; do not mark them visually complete.

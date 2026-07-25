@@ -1,0 +1,11 @@
+---
+globs: "**/{api,lib,data,services,integrations}/**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+# Data integrations
+
+- Keep privileged Google Sheets, CMS, CRM, database, and AI credentials outside client bundles.
+- Map external records into validated domain objects in one adapter rather than spreading source-column assumptions through UI code.
+- Define freshness, caching, timeout, fallback, and observability deliberately.
+- Show operational value through a truthful workflow or demonstration. Do not confuse a front-end demo with a live production integration.
+- Avoid logging secrets or sensitive customer data.
